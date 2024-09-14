@@ -17,7 +17,7 @@ public class MenuSeleccionUsuario : MonoBehaviour
     private void Start()
     {
         gameManager = GameManager.Instance;
-        index = PlayerPrefs.GetInt("UsuarioIndex");
+        index = PlayerPrefs.GetInt("UsuarioIndex", 0);
 
         if (index > gameManager.usuarios.Count - 1)
         {
@@ -62,11 +62,6 @@ public class MenuSeleccionUsuario : MonoBehaviour
     public void IniciarRegistro()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        /*// Guarda el rol seleccionado en PlayerPrefs para ser usado en la siguiente escena
-        PlayerPrefs.SetString("RolSeleccionado", gameManager.usuarios[index].nombre);
-
-        // Cambia a la siguiente escena donde se ingresarán los datos del usuario
-        SceneManager.LoadScene("PanelLogin"); // Asegúrate de que el nombre de la escena esté correcto
-        */
+        
     }
 }

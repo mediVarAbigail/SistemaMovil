@@ -22,6 +22,14 @@ public class InicioLogin : MonoBehaviour
     private void Start()
     {
         int indexUsuario = PlayerPrefs.GetInt("UsuarioIndex");
+        /*if (GameManager.Instance.usuarios[indexUsuario].rolSeleccion != null)
+        {
+            Instantiate(GameManager.Instance.usuarios[indexUsuario].rolSeleccion, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogError("El rol seleccionado es null para el usuario en el índice " + indexUsuario);
+        }*/
         Instantiate(GameManager.Instance.usuarios[indexUsuario].rolSeleccion,transform.position, Quaternion.identity);
 
         // Configuración inicial del botón para mostrar/ocultar contraseña
